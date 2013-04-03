@@ -22,7 +22,7 @@ public class Server
 			int port = receivePacket.getPort();
 			String capitalizedSentence = sentence.toUpperCase();
 			System.out.println(capitalizedSentence);
-			System.out.println("  from" + receivePacket.getAddress() + " port:" + receivePacket.getPort());
+			System.out.println("ip : " + receivePacket.getAddress() + " port : " + receivePacket.getPort());
 			sendData = capitalizedSentence.getBytes();
 			DatagramPacket sendPacket = new DatagramPacket(sendData,
 					sendData.length, IPAddress, port);

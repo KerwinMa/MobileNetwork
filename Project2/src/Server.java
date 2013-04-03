@@ -28,15 +28,15 @@ public class Server
 		System.out.println("Running the UDP Echo Server...");
 		
 		new Thread(new Runnable()
-		{
-			
+		{			
 			@Override
 			public void run()
 			{
 				// TODO Auto-generated method stub
 				try
 				{
-					save += reader.readLine();
+					while(true)
+						save += (reader.readLine() + " ");
 				} catch (IOException e)
 				{
 					// TODO Auto-generated catch block
@@ -50,9 +50,13 @@ public class Server
 		{
 			socket.receive(recv_packet); // 데이터 수신
 			
+			save = new String(recv_packet.getData()).trim() + " " + save;
+						
 			DatagramPacket send_packet = new DatagramPacket(
-					recv_packet.getData(), recv_packet.getLength(),
+					save.getBytes(), save.length(),
 					recv_packet.getAddress(), recv_packet.getPort()); // 에코
+			
+			save = "";
 			
 			new Thread(new ReceiveFrame(socket, send_packet)).start();
 		}

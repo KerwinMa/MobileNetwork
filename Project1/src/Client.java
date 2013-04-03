@@ -28,7 +28,7 @@ public class Client
 					recv_buf.length);
 			clientSocket.receive(recvPacket);
 			System.out.print(new String(recvPacket.getData(), 0, recvPacket.getLength()));
-			System.out.println("  from" + recvPacket.getAddress() + " port:" + recvPacket.getPort());
+			System.out.println("\tfrom ip : " + recvPacket.getAddress() + " port : " + recvPacket.getPort());
 		}
 	}
 }

@@ -14,12 +14,26 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 
-public class Study_UDPClient_GUI1 {
+public class LoginGUI {
 	static String user_name;
 	static JButton btn;
 	static JFrame login_frame;
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		login_frame = new JFrame("login");
+		login_frame.setPreferredSize(new Dimension(300, 80));
+		login_frame.setLocation(500, 400);
+		login_frame.setResizable(false);
+		Container content_pane = login_frame.getContentPane();
+		init_login(content_pane);
+		
+		login_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		login_frame.pack();
+		login_frame.setVisible(true);
+	}*/
+	
+	public LoginGUI() {
 		// TODO Auto-generated method stub
 		login_frame = new JFrame("login");
 		login_frame.setPreferredSize(new Dimension(300, 80));

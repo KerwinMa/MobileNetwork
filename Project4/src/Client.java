@@ -18,11 +18,13 @@ public class Client {
 		DatagramSocket clientSocket = new DatagramSocket();
 		InetAddress inetAddr = InetAddress.getByName(IP_addr);
 		
-		System.out.print("Input user name: ");
+		/*System.out.print("Input user name: ");
 		user_name = input.readLine();
-		String sentence = "Connect from "+user_name;
+		String sentence = "Connect from "+user_name;*/
 		
-		byte[] sendData = new byte[80];
+		LoginGUI login_gui = new LoginGUI(clientSocket);
+				
+		/*byte[] sendData = new byte[80];
 		sendData = sentence.getBytes();
 		
 		DatagramPacket sendPacket = 
@@ -30,7 +32,7 @@ public class Client {
 		clientSocket.send(sendPacket);
 		
 		new Thread(new SendMessageThread(user_name, clientSocket, inetAddr, port_num)).start();
-		new Thread(new ReceiveMessageThread(clientSocket)).start();
+		new Thread(new ReceiveMessageThread(clientSocket)).start();*/
 	}
 
 }

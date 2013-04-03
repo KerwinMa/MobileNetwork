@@ -32,11 +32,11 @@ public class ClientGUI extends Thread {
 	JTextField user_input;
 	JButton send_btn;
 	
-	public ClientGUI(String user_name, DatagramSocket socket) {
+	public ClientGUI(String user_name) {
 		// TODO Auto-generated constructor stub
 		this.user_name = user_name;
 		try{
-			this.socket = socket;
+			socket = new DatagramSocket();
 			client_ip = InetAddress.getLocalHost().getHostAddress();
 		} catch (Exception e) {}
 		chatting_rec = "";

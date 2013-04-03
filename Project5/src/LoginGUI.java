@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.net.DatagramSocket;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -19,7 +18,6 @@ public class LoginGUI {
 	static String user_name;
 	static JButton btn;
 	static JFrame login_frame;
-	static DatagramSocket socket;
 	
 /*	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -35,10 +33,8 @@ public class LoginGUI {
 		login_frame.setVisible(true);
 	}*/
 	
-	public LoginGUI(DatagramSocket socket) {
+	public LoginGUI() {
 		// TODO Auto-generated method stub
-		LoginGUI.socket = socket;
-		
 		login_frame = new JFrame("login");
 		login_frame.setPreferredSize(new Dimension(300, 80));
 		login_frame.setLocation(500, 400);
@@ -126,7 +122,7 @@ public class LoginGUI {
 	public static void login_success(JTextField edit_id){
 		user_name = edit_id.getText();
 		login_frame.setVisible(false);
-		ClientGUI client_gui = new ClientGUI(user_name, socket);
+		ClientGUI client_gui = new ClientGUI(user_name);
 		client_gui.start();
 	}
 }

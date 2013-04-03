@@ -9,10 +9,10 @@ public class Server {
 	public static String user_name;
 	
 	public static void main(String[] args) throws Exception {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		/*BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Input user name: ");
 		user_name = br.readLine();
-		
+		*/
 		DatagramSocket serverSocket = new DatagramSocket(port_num);
 		System.out.println("-----Datagram server socket created-----");
 	
@@ -20,9 +20,10 @@ public class Server {
 		
 		DatagramPacket dataPacket = new DatagramPacket(recvData, recvData.length);
 		serverSocket.receive(dataPacket);
-		System.out.println(new String(dataPacket.getData()));
+		LoginGUI login_gui = new LoginGUI(serverSocket);
+		/*System.out.println(new String(dataPacket.getData()));
 		recvData = null;
-
+*/
 		new Thread(new receiveThread(serverSocket)).start();
 		new Thread(new sendThread(serverSocket, dataPacket, user_name)).start();
 	}

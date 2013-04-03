@@ -19,21 +19,7 @@ public class LoginGUI {
 	static JButton btn;
 	static JFrame login_frame;
 	
-/*	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		login_frame = new JFrame("login");
-		login_frame.setPreferredSize(new Dimension(300, 80));
-		login_frame.setLocation(500, 400);
-		login_frame.setResizable(false);
-		Container content_pane = login_frame.getContentPane();
-		init_login(content_pane);
-		
-		login_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		login_frame.pack();
-		login_frame.setVisible(true);
-	}*/
-	
-	public LoginGUI() {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		login_frame = new JFrame("login");
 		login_frame.setPreferredSize(new Dimension(300, 80));
@@ -46,6 +32,20 @@ public class LoginGUI {
 		login_frame.pack();
 		login_frame.setVisible(true);
 	}
+	
+	/*public LoginGUI() {
+		// TODO Auto-generated method stub
+		login_frame = new JFrame("login");
+		login_frame.setPreferredSize(new Dimension(300, 80));
+		login_frame.setLocation(500, 400);
+		login_frame.setResizable(false);
+		Container content_pane = login_frame.getContentPane();
+		init_login(content_pane);
+		
+		login_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		login_frame.pack();
+		login_frame.setVisible(true);
+	}*/
 	
 	public static void init_login(Container content_pane){
 
